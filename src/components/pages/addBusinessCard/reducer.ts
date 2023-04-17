@@ -17,7 +17,6 @@ const reducer = (state: State, action: Action): State => {
     switch (action.type) {
         case ACTIONS.SET_FIELD:
             const updatedState = {...state, ...action.payload};
-            // Ensure that the payload only includes valid keys of the State interface
             const validKeys = Object.keys(state) as Array<keyof Schema>;
             const payloadKeys = Object.keys(action.payload) as Array<keyof Schema>;
             const invalidKeys = payloadKeys.filter(key => !validKeys.includes(key));
