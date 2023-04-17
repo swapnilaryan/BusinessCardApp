@@ -11,7 +11,7 @@ const iconMap = (iconName: string): () => JSX.Element => {
         name: UserIcon,
         company: CompanyIcon,
         phone: PhoneIcon,
-        linkedIn: LinkedInIcon,
+        linkedin: LinkedInIcon,
         occupation: OccupationIcon
     };
 

@@ -1,6 +1,15 @@
 import {StyleSheet} from "react-native";
 
 const Styles = StyleSheet.create({
+    container: {
+        height: '100%',
+    },
+    addNewCardBtn: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        left: 0
+    },
     listStyle: {
         paddingBottom: 60
     },

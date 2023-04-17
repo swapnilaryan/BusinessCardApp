@@ -35,11 +35,7 @@ const BusinessCardList = ({navigation}: BusinessCardListProps): JSX.Element => {
     };
 
     return (
-        <SafeAreaView>
-            <Button
-                title="Add Business Card"
-                onPress={gotoAddBusinessCard}
-            />
+        <SafeAreaView style={Styles.container}>
             {
                 businessCards.length ? <FlatList contentContainerStyle={Styles.listStyle} data={businessCards} renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => gotoBusinessCardDetails(item.id)}>
@@ -47,6 +43,13 @@ const BusinessCardList = ({navigation}: BusinessCardListProps): JSX.Element => {
                     </TouchableOpacity>
                 )}/> : <Text style={Styles.textColor}>List is Empty</Text>
             }
+
+            <View style={Styles.addNewCardBtn}>
+                <Button
+                    title="Add Business Card"
+                    onPress={gotoAddBusinessCard}
+                />
+            </View>
 
         </SafeAreaView>
     );
