@@ -28,7 +28,7 @@ const validateField = (field: keyof Schema, value: string): string => {
         occupation: /^[A-Za-z\s]+$/,
         company: /^[A-Za-z\s]+$/,
         email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        linkedin: /^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/,
+        linkedin: /^(https?:\/\/)?(www\.)?linkedin\.com\/(in\/)?[a-zA-Z0-9-_.]+$/,
         phone: /^(\+?\d{1,3}[- ]?)?\d{10}$/
     };
     if(field === 'linkedin' && value.trim() !== '' && !regex[field].test(value)) {

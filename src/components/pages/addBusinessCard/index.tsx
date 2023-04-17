@@ -1,5 +1,5 @@
 import React, {useContext, useReducer} from 'react';
-import {Text, TextInput, View, TouchableOpacity, ScrollView, KeyboardTypeOptions} from 'react-native';
+import {ScrollView, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Styles from "./style";
 import {Schema, SchemaWithId} from "../../../utils/schema";
 import {BusinessCardContext} from "../../../context/businessCardContext";
@@ -33,10 +33,7 @@ const AddBusinessCard = ({ navigation } : {navigation: any}) => {
         INPUT_FIELDS.forEach(input => {
             const { key } = input;
             const value = state[key] || '';
-            const error = validateField(key, value);
-            if (error) {
-                errors[key] = error;
-            }
+            errors[key] = validateField(key, value);
         });
 
         dispatch({ type: ACTIONS.SET_ERROR, payload: errors });
